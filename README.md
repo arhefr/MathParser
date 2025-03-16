@@ -13,21 +13,21 @@ import . "github.com/arhefr/MathParser"
   Breaks a math expression into its individual components.\
   **Example:**
   ```Go
-  fmt.Println(Parser("(1488.0 + 1488.0) * 1488"))
+  fmt.Println(Parser("(1488.0+1488.0)*1488"))
   ```
   ```-> ["(", "1488.0", "+", "1488.0", ")", "*", "1488"]```
 - ### InfixPostfix(string) []string
   Converts an infix to a postfix notation math expression.\
   **Example:**
   ```Go
-  fmt.Println(InfixPostfix("(1488.0 + 1488.0) * 1488"))
+  fmt.Println(InfixPostfix("(1488.0+1488.0)*1488"))
   ```
   ```-> ["1488.0", "1488.0", "+", "1488", "*"]```
 - ### InfixPrefix(string) []string
   Converts an infix to a prefix notation math expression.\
   **Example:**
   ```Go
-  fmt.Println(InfixPrefix("(1488.0 + 1488.0) * 1488"))
+  fmt.Println(InfixPrefix("(1488.0+1488.0)*1488"))
   ```
   ```-> ["*", "+", "1488.0", "1488.0", "1488"]```
 - ### PostfixInfix([]string) (string, error)
