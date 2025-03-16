@@ -37,7 +37,7 @@ import . "github.com/arhefr/MathParser"
   fmt.Println(PostfixInfix([]string{"1488.0", "1488.0", "+", "1488", "*"}))
   ```
   ```-> ((1488.0+1488.0)*1488) <nil>```
-  ### PrefixInfix([]string) (string, error)
+- ### PrefixInfix([]string) (string, error)
   Converts an prefix to a infix notation math expression. If math expression incorrect return an error.\
   **Example:**
   ```Go
