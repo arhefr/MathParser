@@ -1,5 +1,5 @@
 # MathParser
-This is golang package for parsing math expressions. With ```MathParser``` you can easily working with prefix, infix and postfix notation of math expressions.
+This is a golang package for parsing math expressions. With ```MathParser``` you can easily working with prefix, infix and postfix notation of math expressions.
 ## Install
 ```shell
 go get -u "github.com/arhefr/MathParser"
