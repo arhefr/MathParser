@@ -36,10 +36,6 @@ func Parser(expr string) []string {
 	return exit
 }
 
-func InfixPostfix(exprStr string) []string {
-	return train(Parser(exprStr))
-}
-
 func InfixPrefix(exprStr string) []string {
 	expr := Parser(exprStr)
 	slices.Reverse(expr)
@@ -59,6 +55,10 @@ func InfixPrefix(exprStr string) []string {
 	return res
 }
 
+func InfixPostfix(exprStr string) []string {
+	return train(Parser(exprStr))
+}
+
 func PrefixInfix(expr []string) (string, error) {
 	slices.Reverse(expr)
 	exprStr, err := PostfixInfix(expr)
@@ -66,7 +66,7 @@ func PrefixInfix(expr []string) (string, error) {
 		return "", err
 	}
 
-	return reverse(exprStr), nil
+	return exprStr, nil
 }
 
 func PostfixInfix(expr []string) (string, error) {
