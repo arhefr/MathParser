@@ -32,7 +32,6 @@ func Parser(expr string) []string {
 		}
 		exit = append(exit, sym)
 	}
-
 	return exit
 }
 
@@ -65,7 +64,6 @@ func PrefixInfix(expr []string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-
 	return exprStr, nil
 }
 
@@ -86,6 +84,5 @@ func PostfixInfix(expr []string) (string, error) {
 		res = res[2:]
 		res = slices.Insert(res, 0, "("+op2+ent+op1+")")
 	}
-
 	return res[0], nil
 }
