@@ -68,3 +68,14 @@ func train(expr []string) []string {
 	exit = append(exit, stack...)
 	return exit
 }
+
+func IsOp(ent string) bool {
+	if _, ok := token[ent]; ok {
+		return true
+	}
+	return false
+}
+
+func IsNum(ent string) bool {
+	return !IsOp(ent)
+}
