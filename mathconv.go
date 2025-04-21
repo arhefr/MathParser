@@ -15,7 +15,7 @@ func Parser(expr string) []string {
 	for i := range expr {
 		sym := string(expr[i])
 
-		if _, ok := token[sym]; !ok || (i == 0 && (sym == "-" || sym == "+")) {
+		if _, ok := Token[sym]; !ok || (i == 0 && (sym == "-" || sym == "+")) {
 			ent += sym
 
 			if i == len(expr)-1 {
@@ -24,7 +24,7 @@ func Parser(expr string) []string {
 				break
 			}
 
-			if _, ok := token[string(expr[i+1])]; ok {
+			if _, ok := Token[string(expr[i+1])]; ok {
 				exit = append(exit, ent)
 				ent = ""
 			}
@@ -71,7 +71,7 @@ func PostfixInfix(expr []string) (string, error) {
 	var res []string
 
 	for _, ent := range expr {
-		if _, ok := token[ent]; !ok {
+		if _, ok := Token[ent]; !ok {
 			res = slices.Insert(res, 0, ent)
 			continue
 		}
