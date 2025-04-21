@@ -5,6 +5,10 @@ import (
 	"slices"
 )
 
+var (
+	errIncorrectMathExpr = fmt.Errorf("error incorrect math expression")
+)
+
 func Parser(expr string) []string {
 	var (
 		ent  string
@@ -77,7 +81,7 @@ func PostfixInfix(expr []string) (string, error) {
 		}
 
 		if len(res) < 2 {
-			return "", fmt.Errorf("error incorrect math expression")
+			return "", errIncorrectMathExpr
 		}
 
 		op1, op2 := res[0], res[1]
