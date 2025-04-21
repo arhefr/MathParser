@@ -34,7 +34,7 @@ func add(exit, stack []string, opAdd string) ([]string, []string) {
 
 	for i := len(stack) - 1; i >= 0; i-- {
 		op := stack[i]
-		if token[op] < token[opAdd] {
+		if Token[op] < Token[opAdd] {
 			return exit, append(stack, opAdd)
 		}
 
@@ -56,7 +56,7 @@ func train(expr []string) []string {
 	)
 
 	for _, ent := range expr {
-		if _, ok := token[ent]; !ok {
+		if _, ok := Token[ent]; !ok {
 			exit = append(exit, ent)
 			continue
 		}
@@ -70,7 +70,7 @@ func train(expr []string) []string {
 }
 
 func IsOp(ent string) bool {
-	if _, ok := token[ent]; ok {
+	if _, ok := Token[ent]; ok {
 		return true
 	}
 	return false
